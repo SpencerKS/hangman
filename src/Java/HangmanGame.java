@@ -52,7 +52,6 @@ public class HangmanGame {
     public void compareGuess(char guess) {
         if (player.getGuessedLetters().contains(guess)) {
             System.out.println("You already guessed that letter. Guess again.");
-            playerGuess();
         }
         else {
             player.addGuessedLetter(guess);
@@ -60,9 +59,9 @@ public class HangmanGame {
                 game.incrementPhase();
                 player.addMissedLetter(guess);
             }
-            drawOutput();
-            playerGuess();
         }
+        drawOutput();
+        playerGuess();
     }
     //this method simply gets and returns the input from the scanner
     //this is necessary to simplify the usage of the scanner and prevent
